@@ -16,8 +16,22 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+
+      contentSecurityPolicy: {
+          'default-src': "'none'",
+          'script-src': "'self'", 
+          'font-src': "'self' fonts.gstatic.com",
+          'connect-src': "'self' http://zyserver-dev.zybooks.com/v1/",
+          'img-src': "'self' data:",
+          'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+          'media-src': "'self'"
+      }
+
+
   };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
